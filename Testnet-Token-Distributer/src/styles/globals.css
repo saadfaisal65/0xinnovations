@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0a0510;
+    --foreground: #ededed;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply antialiased selection:bg-pink-900/50 selection:text-white;
+  }
+}
+
+/* ===== Cosmic Background — Pure CSS (GPU Accelerated) ===== */
+.cosmic-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: #0a0510;
+  overflow: hidden;
+  contain: strict;
+}
+
+/* Nebula Orbs */
+.cosmic-orb {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.cosmic-orb-1 {
+  top: -10%;
+  left: -10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(134, 25, 143, 0.35) 0%, transparent 70%);
+  filter: blur(80px);
+  animation: orb-pulse-1 15s ease-in-out infinite;
+}
+
+.cosmic-orb-2 {
+  bottom: -10%;
+  right: -10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(88, 28, 135, 0.3) 0%, transparent 70%);
+  filter: blur(80px);
+  animation: orb-pulse-2 20s ease-in-out infinite 2s;
+}
+
+.cosmic-orb-3 {
+  top: 40%;
+  right: 10%;
+  width: 30%;
+  height: 30%;
+  background: radial-gradient(circle, rgba(157, 23, 77, 0.2) 0%, transparent 70%);
+  filter: blur(60px);
+  animation: orb-pulse-3 18s ease-in-out infinite 5s;
+}
+
+@keyframes orb-pulse-1 {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+  50% { transform: scale(1.1) rotate(5deg); opacity: 0.4; }
+}
+
+@keyframes orb-pulse-2 {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.2; }
+  50% { transform: scale(1.2) rotate(-5deg); opacity: 0.3; }
+}
+
+@keyframes orb-pulse-3 {
+  0%, 100% { transform: scale(1); opacity: 0.15; }
+  50% { transform: scale(1.1); opacity: 0.25; }
+}
+
+/* Stars — Using CSS box-shadow for particles (zero JS, zero layout cost) */
+.cosmic-stars {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  will-change: transform;
+}
+
+.cosmic-stars-1 {
+  box-shadow:
+    120px 50px 0 0.5px rgba(255,255,255,0.7),
+    350px 180px 0 0.3px rgba(255,255,255,0.5),
+    580px 320px 0 0.8px rgba(255,255,255,0.8),
+    810px 90px 0 0.4px rgba(255,255,255,0.6),
+    200px 450px 0 0.6px rgba(255,255,255,0.7),
+    650px 520px 0 0.3px rgba(255,255,255,0.5),
+    430px 680px 0 0.7px rgba(255,255,255,0.9),
+    900px 350px 0 0.5px rgba(255,255,255,0.6),
+    1100px 200px 0 0.4px rgba(255,255,255,0.7),
+    150px 750px 0 0.6px rgba(255,255,255,0.5),
+    780px 600px 0 0.3px rgba(255,255,255,0.8),
+    1050px 480px 0 0.5px rgba(255,255,255,0.6),
+    320px 280px 0 0.4px rgba(255,255,255,0.7),
+    1200px 100px 0 0.7px rgba(255,255,255,0.5),
+    500px 800px 0 0.3px rgba(255,255,255,0.6),
+    70px 350px 0 0.5px rgba(255,255,255,0.8),
+    950px 720px 0 0.4px rgba(255,255,255,0.5),
+    1300px 550px 0 0.6px rgba(255,255,255,0.7),
+    400px 150px 0 0.3px rgba(255,255,255,0.6),
+    1150px 650px 0 0.5px rgba(255,255,255,0.8);
+  animation: star-drift-1 80s linear infinite;
+}
+
+.cosmic-stars-2 {
+  box-shadow:
+    250px 120px 0 0.4px rgba(255,255,255,0.6),
+    480px 380px 0 0.6px rgba(255,255,255,0.7),
+    710px 550px 0 0.3px rgba(255,255,255,0.5),
+    100px 680px 0 0.7px rgba(255,255,255,0.8),
+    930px 240px 0 0.5px rgba(255,255,255,0.6),
+    350px 520px 0 0.4px rgba(255,255,255,0.7),
+    1060px 380px 0 0.6px rgba(255,255,255,0.5),
+    600px 150px 0 0.3px rgba(255,255,255,0.8),
+    180px 900px 0 0.5px rgba(255,255,255,0.6),
+    840px 720px 0 0.7px rgba(255,255,255,0.7),
+    1220px 450px 0 0.4px rgba(255,255,255,0.5),
+    50px 580px 0 0.6px rgba(255,255,255,0.8),
+    750px 80px 0 0.3px rgba(255,255,255,0.6),
+    1100px 600px 0 0.5px rgba(255,255,255,0.7),
+    420px 420px 0 0.4px rgba(255,255,255,0.5);
+  animation: star-drift-2 100s linear infinite 5s;
+}
+
+.cosmic-stars-3 {
+  box-shadow:
+    380px 220px 0 1px rgba(255,255,255,0.9),
+    800px 450px 0 0.8px rgba(255,255,255,0.8),
+    1200px 300px 0 1px rgba(255,255,255,0.7),
+    550px 700px 0 0.9px rgba(255,255,255,0.8),
+    100px 500px 0 1.2px rgba(255,255,255,0.9),
+    950px 150px 0 0.8px rgba(255,255,255,0.7),
+    300px 850px 0 1px rgba(255,255,255,0.8),
+    700px 50px 0 0.9px rgba(255,255,255,0.9);
+  animation: star-drift-3 120s linear infinite 10s;
+}
+
+@keyframes star-drift-1 {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-200px, -150px, 0); }
+}
+
+@keyframes star-drift-2 {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-150px, -200px, 0); }
+}
+
+@keyframes star-drift-3 {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-100px, -120px, 0); }
+}
+
+/* Custom scrollbar for consistency */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
