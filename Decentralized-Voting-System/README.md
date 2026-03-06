@@ -2,6 +2,8 @@
 
 A robust, transparent, and secure decentralized election application (DApp) built for managing transparent Union Council (UC) level elections on the Ethereum Blockchain (Sepolia Testnet), with advanced off-chain identity verification powered by Supabase.
 
+**🌍 Live Demo:** [0xinnovation-decentralize-voting-system.vercel.app](https://0xinnovation-decentralize-voting-system.vercel.app/)
+
 ## ✨ Features
 
 - **Blockchain Powered Voting:** All the votes are cast securely on the Sepolia Ethereum network through Smart Contracts.
