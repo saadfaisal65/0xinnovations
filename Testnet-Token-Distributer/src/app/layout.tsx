@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: '0xInnovations',
+    title: 'Testnet Token Distributor',
     description: 'Multi-chain testnet token distributor for verified developers.',
 };
 
